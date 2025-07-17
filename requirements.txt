@@ -1,10 +1,10 @@
 python-dotenv
-pandas 
+pandas
 numpy
 pymongo
+pymongo[srv]==3.6
 certifi
 
 
 
-## -e .
-
+# -e .
