@@ -1,6 +1,0 @@
-[ 2025-07-16 19:14:59,038 ] 20 root - INFO - NetworkDataExtract initialized.
-[ 2025-07-16 19:14:59,038 ] 26 root - INFO - Reading CSV file from: Network_Data\phisingData.csv
-[ 2025-07-16 19:14:59,372 ] 30 root - INFO - Converted CSV to 11055 JSON records.
-[ 2025-07-16 19:14:59,377 ] 37 root - INFO - Connecting to MongoDB Atlas...
-[ 2025-07-16 19:15:00,188 ] 42 root - INFO - Inserting records into MongoDB collection: NetworkData
-[ 2025-07-16 19:15:00,263 ] 96 pymongo.serverSelection - INFO - {"message": "Waiting for suitable server to become available", "selector": "<function writable_server_selector at 0x00000250AA6F8EA0>", "operation": "insert", "operationId": 459985981, "topologyDescription": "<TopologyDescription id: 6877acdc5db36f727939ba7d, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-jqlxu0t-shard-00-00.rynxgnh.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-jqlxu0t-shard-00-01.rynxgnh.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-jqlxu0t-shard-00-02.rynxgnh.mongodb.net', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "6877acdc5db36f727939ba7d"}, "remainingTimeMS": 29}
