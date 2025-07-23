@@ -1,0 +1,24 @@
+[ 2025-07-23 23:33:24,208 ] 17 root - INFO - Initiate the data ingestion
+[ 2025-07-23 23:33:27,190 ] 61 root - INFO - Performed train-test split on dataframe.
+[ 2025-07-23 23:33:27,269 ] 73 root - INFO - Exported train and test file paths.
+[ 2025-07-23 23:33:27,269 ] 19 root - INFO - Data inititation Completed
+[ 2025-07-23 23:33:27,269 ] 14 root - INFO - Reading YAML file from data_schema\schema.yaml
+[ 2025-07-23 23:33:27,269 ] 22 root - INFO - Initiate the data validation
+[ 2025-07-23 23:33:27,376 ] 33 root - INFO - Required number of columns: 31
+[ 2025-07-23 23:33:27,376 ] 34 root - INFO - Data frame has columns: 31
+[ 2025-07-23 23:33:27,376 ] 33 root - INFO - Required number of columns: 31
+[ 2025-07-23 23:33:27,376 ] 34 root - INFO - Data frame has columns: 31
+[ 2025-07-23 23:33:27,507 ] 28 root - INFO - Wrote YAML file to Artifacts\07_23_2025_23_33_06\data_validation\drift_report\report.yaml
+[ 2025-07-23 23:33:27,566 ] 24 root - INFO - daata validation completed
+[ 2025-07-23 23:33:27,566 ] 27 root - INFO - data transformation started
+[ 2025-07-23 23:33:27,566 ] 57 root - INFO - Entered initiate_data_transformation method of DataTransformation class 
+[ 2025-07-23 23:33:27,566 ] 59 root - INFO - Starting data Transformation
+[ 2025-07-23 23:33:27,681 ] 43 root - INFO - Entered get_data_transformer_object method of Transformation class
+[ 2025-07-23 23:33:27,681 ] 48 root - INFO - Initilaise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-07-23 23:33:27,693 ] 37 root - INFO - Saving NumPy array to Artifacts\07_23_2025_23_33_06\data_transformation\transformed\train.npy
+[ 2025-07-23 23:33:27,697 ] 37 root - INFO - Saving NumPy array to Artifacts\07_23_2025_23_33_06\data_transformation\transformed\test.npy
+[ 2025-07-23 23:33:27,702 ] 47 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-07-23 23:33:27,702 ] 51 root - INFO - Saved object to Artifacts\07_23_2025_23_33_06\data_transformation\transformed_object\preprocessing.pkl
+[ 2025-07-23 23:33:27,702 ] 52 root - INFO - Exited the save_object method in MainUtils class
+[ 2025-07-23 23:33:27,702 ] 31 root - INFO - data transformation completed
+[ 2025-07-23 23:33:27,702 ] 34 root - INFO - Model Training started

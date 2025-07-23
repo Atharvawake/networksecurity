@@ -1,0 +1,29 @@
+[ 2025-07-23 22:40:20,054 ] 17 root - INFO - Initiate the data ingestion
+[ 2025-07-23 22:40:24,257 ] 61 root - INFO - Performed train-test split on dataframe.
+[ 2025-07-23 22:40:24,320 ] 73 root - INFO - Exported train and test file paths.
+[ 2025-07-23 22:40:24,320 ] 19 root - INFO - Data inititation Completed
+[ 2025-07-23 22:40:24,320 ] 14 root - INFO - Reading YAML file from data_schema\schema.yaml
+[ 2025-07-23 22:40:24,330 ] 22 root - INFO - Initiate the data validation
+[ 2025-07-23 22:40:24,392 ] 33 root - INFO - Required number of columns: 31
+[ 2025-07-23 22:40:24,392 ] 34 root - INFO - Data frame has columns: 31
+[ 2025-07-23 22:40:24,408 ] 33 root - INFO - Required number of columns: 31
+[ 2025-07-23 22:40:24,408 ] 34 root - INFO - Data frame has columns: 31
+[ 2025-07-23 22:40:24,513 ] 28 root - INFO - Wrote YAML file to Artifacts\07_23_2025_22_40_18\data_validation\drift_report\report.yaml
+[ 2025-07-23 22:40:24,606 ] 24 root - INFO - daata validation completed
+[ 2025-07-23 22:40:24,606 ] 27 root - INFO - data transformation started
+[ 2025-07-23 22:40:24,606 ] 57 root - INFO - Entered initiate_data_transformation method of DataTransformation class 
+[ 2025-07-23 22:40:24,606 ] 59 root - INFO - Starting data Transformation
+[ 2025-07-23 22:40:24,713 ] 43 root - INFO - Entered get_data_transformer_object method of Transformation class
+[ 2025-07-23 22:40:24,713 ] 48 root - INFO - Initilaise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-07-23 22:40:24,726 ] 37 root - INFO - Saving NumPy array to Artifacts\07_23_2025_22_40_18\data_transformation\transformed\train.npy
+[ 2025-07-23 22:40:24,735 ] 37 root - INFO - Saving NumPy array to Artifacts\07_23_2025_22_40_18\data_transformation\transformed\test.npy
+[ 2025-07-23 22:40:24,735 ] 47 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-07-23 22:40:24,742 ] 51 root - INFO - Saved object to Artifacts\07_23_2025_22_40_18\data_transformation\transformed_object\preprocessing.pkl
+[ 2025-07-23 22:40:24,742 ] 52 root - INFO - Exited the save_object method in MainUtils class
+[ 2025-07-23 22:40:24,745 ] 31 root - INFO - data transformation completed
+[ 2025-07-23 22:40:24,745 ] 34 root - INFO - Model Training started
+[ 2025-07-23 22:44:42,353 ] 47 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-07-23 22:44:42,353 ] 51 root - INFO - Saved object to Artifacts\07_23_2025_22_40_18\model_trainer\trained_model\model.pkl
+[ 2025-07-23 22:44:42,353 ] 52 root - INFO - Exited the save_object method in MainUtils class
+[ 2025-07-23 22:44:42,353 ] 114 root - INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\07_23_2025_22_40_18\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9908833063209076, precision_score=0.9870837537840566, recall_score=0.9947122229001424), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9755314881668672, precision_score=0.9704708699122107, recall_score=0.9806451612903225))
+[ 2025-07-23 22:44:42,365 ] 39 root - INFO - Model Training artifact created
