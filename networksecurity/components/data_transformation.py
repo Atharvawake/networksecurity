@@ -16,6 +16,7 @@ from networksecurity.entity.artifact_entity import (
 from networksecurity.entity.config_entity import DataTransformationConfig
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logging
+## from networksecurity.components.model_trainer import ModelTrainer
 
 from networksecurity.utils.main_utils.utils import save_numpy_array_data,save_object
 
@@ -79,6 +80,8 @@ class DataTransformation:
             save_numpy_array_data(self.data_transformation_config.transformed_train_file_path,array=train_arr)
             save_numpy_array_data(self.data_transformation_config.transformed_test_file_path,array=test_arr)
             save_object(self.data_transformation_config.transformed_object_file_path,preprocessor_object,)
+
+            save_object("final_model/preprocessor.pkl",preprocessor_object)
 
             data_transformation_artifact=DataTransformationArtifacts(
 

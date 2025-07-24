@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 from dotenv import load_dotenv
 
 load_dotenv()
-MONGO_DB_URL = os.getenv("MONGO_DB_URL")
+MONGODB_URL  = os.getenv("MONGODB_URL_KEY")
 
 
 class DataIngestion:
@@ -24,22 +24,30 @@ class DataIngestion:
             raise NetworkSecurityException(e, sys)
 
     def export_collection_as_dataframe(self) -> pd.DataFrame:
+
         try:
-            database_name = self.data_ingestion_config.database_name
-            collection_name = self.data_ingestion_config.collection_name
-            self.mongo_client = pymongo.MongoClient(MONGO_DB_URL)
-            collection = self.mongo_client[database_name][collection_name]
+          database_name = self.data_ingestion_config.database_name
+          collection_name = self.data_ingestion_config.collection_name
+          self.mongo_client = pymongo.MongoClient(MONGODB_URL)
+          collection = self.mongo_client[database_name][collection_name]
 
-            df = pd.DataFrame(list(collection.find()))
+          data = list(collection.find())
+          print(f"🔍 Total records fetched from MongoDB: {len(data)}")
 
-            if "_id" in df.columns:
-                df.drop(columns=["_id"], inplace=True)
+          if len(data) == 0:
+            raise ValueError(f"Collection `{collection_name}` in DB `{database_name}` is empty.")
 
-            df.replace({"na": np.nan}, inplace=True)
-            return df
+          df = pd.DataFrame(data)
+
+          if "_id" in df.columns:
+            df.drop(columns=["_id"], inplace=True)
+
+          df.replace({"na": np.nan}, inplace=True)
+          return df
 
         except Exception as e:
-            raise NetworkSecurityException(e, sys)
+          raise NetworkSecurityException(e, sys)
+
 
     def export_data_into_feature_store(self, dataframe: pd.DataFrame) -> pd.DataFrame:
         try:
